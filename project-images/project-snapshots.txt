@@ -1,0 +1,2 @@
+The images on this folder shows the how the complete project look on a desktop
+and mobile devices. The app was made responsive and user-friendly.

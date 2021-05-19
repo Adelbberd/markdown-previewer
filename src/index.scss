@@ -1,0 +1,172 @@
+$primaryColor: #fff;
+$bgColor: #f8f4f9;
+$bodyBgColor: #55bf76;
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	background-color: $bodyBgColor; // #7d869c;
+}
+
+#root {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+
+	label {
+		color: $primaryColor;
+		display: block;
+		text-align: center;
+		font-size: 5vw;
+	}
+
+	textarea {
+		background-color: $bgColor;
+		padding: 8px;
+
+		font-size: 1.5em;
+	}
+}
+
+// Markdown Preview Styles //
+
+#preview {
+	background-color: $bgColor;
+	padding: 0 20px;
+	word-wrap: break-word;
+	white-space: pre-wrap;
+	overflow: scroll;
+	font-size: 1.5em;
+	border: 1px solid black;
+
+	h1,
+	h2,
+	h3 {
+		text-decoration: underline;
+	}
+
+	h1,
+	h2,
+	h3,
+	del {
+		text-decoration-color: $bodyBgColor;
+		color: $bodyBgColor;
+	}
+
+	th,
+	td {
+		border: solid 1px $bodyBgColor;
+		padding: 5px;
+	}
+
+	th {
+		border-bottom: solid 3px $bodyBgColor;
+	}
+
+	table {
+		border-collapse: collapse;
+	}
+
+	ul,
+	ol {
+		padding: 0 25px;
+		line-height: 80%;
+	}
+
+	blockquote {
+		margin-left: 20px;
+		padding-left: 10px;
+		border-left: 2px solid $bodyBgColor;
+		line-height: 70%;
+		color: $bodyBgColor;
+		line-height: 1em;
+	}
+
+	code {
+		background-color: $bodyBgColor;
+		color: $bgColor;
+		display: inline-block;
+		opacity: 1;
+	}
+
+	a {
+		text-decoration: none;
+	}
+}
+
+textarea,
+#preview {
+	width: 100%;
+	height: 85%;
+	box-shadow: 15px 15px 100px 2px rgba(0, 0, 0, 0.85);
+	-webkit-box-shadow: 15px 15px 100px 2px rgba(0, 0, 0, 0.85);
+	-moz-box-shadow: 15px 15px 100px 2px rgba(0, 0, 0, 0.85);
+	border-radius: 10px;
+	border: 5px solid #749a72;
+}
+
+footer {
+	color: $primaryColor;
+	font-size: 1.5em;
+	margin: 20px 0;
+	text-align: center;
+}
+
+// Desktop view
+@media only screen and (min-width: 768px) {
+	#root {
+		display: grid;
+		grid-template-columns: 45% 55%;
+		gap: 0.25em;
+		margin: 20px 20px;
+
+		.div-editor,
+		.div-preview {
+			height: 100vh;
+		}
+
+		.between {
+			display: none;
+		}
+	}
+}
+
+// Mobile View
+@media only screen and (max-width: 768px) {
+	#root {
+		width: 100vw;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+
+		.div-editor {
+			width: 100%;
+			margin: auto;
+			text-align: center;
+
+			textarea {
+				width: 80%;
+				height: 250px;
+			}
+		}
+
+		.between {
+			display: block;
+			color: $bgColor;
+			width: 100%;
+			border: solid 2px;
+			margin: 20px 0px;
+		}
+
+		#preview {
+			margin: auto;
+			width: 90%;
+			height: 100vh;
+			font-size: 1.2em;
+		}
+	}
+}
